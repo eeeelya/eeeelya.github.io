@@ -39,6 +39,18 @@
             line-height: 1.6;
         }
 
+        @media (max-width: 768px) {
+            body {
+                background-size: 30px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background-size: 20px 20px;
+            }
+        }
+
         .container {
             max-width: 650px;
             width: 100%;
@@ -69,7 +81,7 @@
             list-style: none;
             padding: 0;
             display: flex;
-            flex-wrap: nowrap;
+            flex-wrap: wrap;
             gap: 15px;
             margin-top: 0;
             justify-content: center;
@@ -95,7 +107,7 @@
         }
 
         .social-links a i {
-            font-size: 1.2em;
+            font-size: 1.5em;
             transition: transform 0.2s ease;
         }
 
@@ -104,10 +116,11 @@
         }
 
         .bottom-line {
-            width: 302px;
+            width: 100%;
+            max-width: 302px;
             height: 1px;
             background: #000;
-            margin: 2.5em 0;
+            margin: 2.5em auto;
             opacity: 0;
         }
 
@@ -200,41 +213,72 @@
             }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+            body {
+                padding: 20px 15px;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
             h1 {
-                font-size: 2.5em;
+                font-size: 2.8em;
+                margin-bottom: 0.3em;
             }
 
             .subtitle {
-                font-size: 1.3em;
+                font-size: 1.2em;
+                margin-bottom: 1.5em;
             }
 
             .social-links {
-                gap: 10px;
+                flex-wrap: wrap;
+                gap: 8px;
+                justify-content: center;
             }
 
             .social-links a {
-                font-size: 0.85em;
-                padding: 8px 14px;
+                font-size: 0.8em;
+                padding: 6px 12px;
+                min-width: 80px;
+            }
+
+            .social-links a i {
+                font-size: 1.3em;
             }
 
             .bottom-line {
-                width: 150px;
-                margin-top: 2em;
+                width: 100%;
+                margin: 2em 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.2em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .social-links {
+                gap: 6px;
+            }
+
+            .social-links a {
+                font-size: 0.75em;
+                padding: 5px 10px;
+                min-width: 70px;
+            }
+
+            .social-links a i {
+                font-size: 1.2em;
             }
 
             body {
-                padding: 30px 20px;
-            }
-
-            /* Reduce float animation on mobile */
-            @keyframes float {
-                0%, 100% {
-                    transform: translateY(0px);
-                }
-                50% {
-                    transform: translateY(-5px);
-                }
+                padding: 15px 10px;
             }
         }
     </style>
