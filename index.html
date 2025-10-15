@@ -4,9 +4,307 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Goroshchik Ilya</title>
+    <title>Ilya Goroshchik</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'JetBrains Mono', monospace;
+            background: #ffffff;
+            background-image: 
+                linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            color: #000000;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 650px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 4.5em;
+            font-weight: 600;
+            margin-bottom: 0.5em;
+            opacity: 0;
+            white-space: nowrap;
+        }
+
+        .subtitle {
+            font-size: 2em;
+            font-weight: 400;
+            margin-bottom: 0.8em;
+            color: #555;
+            opacity: 0;
+            white-space: nowrap;
+        }
+
+        .social-links {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 15px;
+            margin-top: 0;
+            justify-content: center;
+        }
+
+        .social-links li {
+            opacity: 0;
+        }
+
+        .social-links a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 400;
+            font-size: 1em;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 18px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background: #fafafa;
+        }
+
+        .social-links a i {
+            font-size: 1.2em;
+            transition: transform 0.2s ease;
+        }
+
+        .social-links a:hover i {
+            transform: scale(1.15);
+        }
+
+        .bottom-line {
+            width: 302px;
+            height: 1px;
+            background: #000;
+            margin: 2.5em 0;
+            opacity: 0;
+        }
+
+        /* Terminal cursor blink effect */
+        .subtitle::after {
+            content: '_';
+            animation: terminalBlink 1s infinite;
+            margin-left: 5px;
+        }
+
+        @keyframes terminalBlink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+
+        /* Binary background effect */
+        body::before {
+            content: '01001000 01100101 01101100 01101100 01101111 01010111 01101111 01110010 01101100 01100100';
+            position: fixed;
+            top: 10%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 0.7em;
+            color: rgba(0,0,0,0.03);
+            letter-spacing: 3px;
+            pointer-events: none;
+            z-index: -1;
+            animation: scrollBinary 30s linear infinite;
+        }
+
+        @keyframes scrollBinary {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        /* Scale and glow effect on links */
+        .social-links a {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Minimalistic hover effect for name */
+        h1 {
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        h1:hover {
+            transform: scale(1.02);
+        }
+
+
+        /* Typewriter cursor */
+        .typewriter::after {
+            content: '|';
+            animation: blink 0.7s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% {
+                opacity: 1;
+            }
+            51%, 100% {
+                opacity: 0;
+            }
+        }
+
+        /* Fade in animation */
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2.5em;
+            }
+
+            .subtitle {
+                font-size: 1.3em;
+            }
+
+            .social-links {
+                gap: 10px;
+            }
+
+            .social-links a {
+                font-size: 0.85em;
+                padding: 8px 14px;
+            }
+
+            .bottom-line {
+                width: 150px;
+                margin-top: 2em;
+            }
+
+            body {
+                padding: 30px 20px;
+            }
+
+            /* Reduce float animation on mobile */
+            @keyframes float {
+                0%, 100% {
+                    transform: translateY(0px);
+                }
+                50% {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <div class="main-content">
+            <h1 id="name"></h1>
+            <p class="subtitle" id="subtitle"></p>
+        </div>
+        
+        <div class="bottom-line" id="bottom-line"></div>
+        
+        <ul class="social-links" id="links">
+            <li><a href="https://github.com/eeeelya" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i><span>GitHub</span></a></li>
+            <li><a href="https://leetcode.com/u/eeeelya" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i><span>LeetCode</span></a></li>
+            <li><a href="https://www.linkedin.com/in/goooroshchik/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
+            <li><a href="https://t.me/eeeelyaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i><span>Telegram</span></a></li>
+            <li><a href="https://wa.me/971588752453" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a></li>
+            <li><a href="mailto:goooroshchik@gmail.com"><i class="fas fa-envelope"></i><span>Gmail</span></a></li>
+        </ul>
+    </div>
+
+    <script>
+        // Typewriter effect function
+        function typeWriter(element, text, speed = 10, callback) {
+            let i = 0;
+            element.style.opacity = '1';
+            element.classList.add('typewriter');
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    element.classList.remove('typewriter');
+                    if (callback) callback();
+                }
+            }
+            type();
+        }
+
+        // Fade in animation
+        function fadeIn(element, delay = 0) {
+            setTimeout(() => {
+                element.classList.add('fade-in');
+            }, delay);
+        }
+
+        // Initialize animations on page load
+        window.addEventListener('DOMContentLoaded', () => {
+            const nameEl = document.getElementById('name');
+            const subtitleEl = document.getElementById('subtitle');
+            const linksContainer = document.getElementById('links');
+            const links = linksContainer.querySelectorAll('li');
+            const bottomLine = document.getElementById('bottom-line');
+
+            // Start typewriter animations for main content
+            typeWriter(nameEl, 'Ilya Goroshchik', 40, () => {
+                typeWriter(subtitleEl, 'Software Engineer • Python Developer', 35, () => {
+                    // After main content, fade in links one by one
+                    setTimeout(() => {
+                        links.forEach((link, index) => {
+                            fadeIn(link, index * 60);
+                        });
+                        
+                        // Fade in bottom line after all links
+                        fadeIn(bottomLine, links.length * 60 + 200);
+                    }, 200);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
