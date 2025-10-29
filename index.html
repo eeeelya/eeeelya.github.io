@@ -81,22 +81,18 @@
             list-style: none;
             padding: 0;
             display: flex;
-            /* keep all links on a single row */
             flex-wrap: nowrap;
             gap: 15px;
             margin-top: 0;
             justify-content: center;
-            /* allow horizontal scrolling on very small viewports instead of wrapping */
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
             width: 100%;
         }
 
         .social-links li {
             opacity: 0;
-            /* allow items to shrink so they fit on one row; min-width:0 prevents overflow issues */
-            flex: 1 1 0;
-            min-width: 0;
+            flex: 1 1 240px;
+            min-width: 180px;
+            max-width: 100%;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -108,7 +104,6 @@
             font-weight: 400;
             font-size: 1.1em;
             transition: all 0.2s ease;
-            /* make anchors fill their list item and center content */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -118,8 +113,10 @@
             border-radius: 6px;
             background: #fafafa;
             width: 100%;
+            min-width: 160px;
             box-sizing: border-box;
-            white-space: nowrap;
+            white-space: normal;
+            word-break: break-word;
         }
 
         .social-links a i {
@@ -249,8 +246,7 @@
             }
 
             .social-links {
-                /* keep nowrap so links stay in one row; allow scrolling if needed */
-                flex-wrap: nowrap;
+                flex-wrap: wrap;
                 gap: 8px;
                 justify-content: center;
             }
