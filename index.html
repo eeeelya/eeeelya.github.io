@@ -81,14 +81,25 @@
             list-style: none;
             padding: 0;
             display: flex;
-            flex-wrap: wrap;
+            /* keep all links on a single row */
+            flex-wrap: nowrap;
             gap: 15px;
             margin-top: 0;
             justify-content: center;
+            /* allow horizontal scrolling on very small viewports instead of wrapping */
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            width: 100%;
         }
 
         .social-links li {
             opacity: 0;
+            /* allow items to shrink so they fit on one row; min-width:0 prevents overflow issues */
+            flex: 1 1 0;
+            min-width: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .social-links a {
@@ -97,13 +108,18 @@
             font-weight: 400;
             font-size: 1.1em;
             transition: all 0.2s ease;
-            display: inline-flex;
+            /* make anchors fill their list item and center content */
+            display: flex;
             align-items: center;
+            justify-content: center;
             gap: 12px;
             padding: 12px 20px;
             border: 1px solid #ddd;
             border-radius: 6px;
             background: #fafafa;
+            width: 100%;
+            box-sizing: border-box;
+            white-space: nowrap;
         }
 
         .social-links a i {
@@ -233,7 +249,8 @@
             }
 
             .social-links {
-                flex-wrap: wrap;
+                /* keep nowrap so links stay in one row; allow scrolling if needed */
+                flex-wrap: nowrap;
                 gap: 8px;
                 justify-content: center;
             }
@@ -296,8 +313,6 @@
             <li><a href="https://github.com/eeeelya" target="_blank" rel="noopener noreferrer"><i class="fab fa-github"></i><span>GitHub</span></a></li>
             <li><a href="https://leetcode.com/u/eeeelya" target="_blank" rel="noopener noreferrer"><i class="fas fa-code"></i><span>LeetCode</span></a></li>
             <li><a href="https://www.linkedin.com/in/goooroshchik/" target="_blank" rel="noopener noreferrer"><i class="fab fa-linkedin"></i><span>LinkedIn</span></a></li>
-            <li><a href="https://t.me/eeeelyaa" target="_blank" rel="noopener noreferrer"><i class="fab fa-telegram"></i><span>Telegram</span></a></li>
-            <li><a href="https://wa.me/971588752453" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a></li>
             <li><a href="mailto:goooroshchik@gmail.com"><i class="fas fa-envelope"></i><span>Gmail</span></a></li>
         </ul>
     </div>
